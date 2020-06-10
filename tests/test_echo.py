@@ -20,7 +20,7 @@ class TestEcho(unittest.TestCase):
         stdout, _ = process.communicate()
         usage = open("./USAGE", "r").read()
 
-        self.assertEquals(stdout.decode("utf8"), usage)
+        self.assertEquals(stdout.decode(), usage)
 
 
     def test_upper_short(self):
