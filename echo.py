@@ -39,6 +39,7 @@ def main(args):
         text = text.title()
     
     return text
+    
 
 if __name__ == '__main__':
     print(main(sys.argv[1:]))
