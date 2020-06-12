@@ -38,8 +38,7 @@ def main(args):
     elif args.title:
         text = text.title()
     
-    return text
-    
+    return text    
 
 if __name__ == '__main__':
     print(main(sys.argv[1:]))
