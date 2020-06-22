@@ -20,7 +20,7 @@ class TestEcho(unittest.TestCase):
         stdout, _ = process.communicate()
         usage = open("./USAGE", "r").read()
 
-        self.assertEquals(stdout.decode(), usage)
+        self.assertEqual(stdout.decode(), usage)
 
 
     def test_upper_short(self):
@@ -29,7 +29,7 @@ class TestEcho(unittest.TestCase):
         namespace = self.parser.parse_args(args)
         self.assertTrue(namespace.upper)
         result = echo.main(args)
-        self.assertEquals(result, "HELLO")
+        self.assertEqual(result, "HELLO")
 
 
     def test_upper_long(self):
@@ -38,7 +38,7 @@ class TestEcho(unittest.TestCase):
         namespace = self.parser.parse_args(args)
         self.assertTrue(namespace.upper)
         result = echo.main(args)
-        self.assertEquals(result, "HELLO")
+        self.assertEqual(result, "HELLO")
 
 
     def test_lower_short(self):
@@ -47,7 +47,7 @@ class TestEcho(unittest.TestCase):
         namespace = self.parser.parse_args(args)
         self.assertTrue(namespace.lower)
         result = echo.main(args)
-        self.assertEquals(result, "hello")
+        self.assertEqual(result, "hello")
 
 
     def test_lower_long(self):
@@ -56,7 +56,7 @@ class TestEcho(unittest.TestCase):
         namespace = self.parser.parse_args(args)
         self.assertTrue(namespace.lower)
         result = echo.main(args)
-        self.assertEquals(result, "hello")
+        self.assertEqual(result, "hello")
 
     
     def test_title_short(self):
@@ -65,7 +65,7 @@ class TestEcho(unittest.TestCase):
         namespace = self.parser.parse_args(args)
         self.assertTrue(namespace.title)
         result = echo.main(args)
-        self.assertEquals(result, "Hi Folks!")
+        self.assertEqual(result, "Hi Folks!")
 
 
     def test_title_long(self):
@@ -74,7 +74,7 @@ class TestEcho(unittest.TestCase):
         namespace = self.parser.parse_args(args)
         self.assertTrue(namespace.title)
         result = echo.main(args)
-        self.assertEquals(result, "Hi Folks!")
+        self.assertEqual(result, "Hi Folks!")
 
 
     def test_all(self):
@@ -83,7 +83,7 @@ class TestEcho(unittest.TestCase):
         namespace = self.parser.parse_args(args)
         self.assertTrue(namespace.upper)
         result = echo.main(args)
-        self.assertEquals(result, "HELLO!")
+        self.assertEqual(result, "HELLO!")
 
 
     def test_two_args(self):
@@ -92,14 +92,14 @@ class TestEcho(unittest.TestCase):
         namespace = self.parser.parse_args(args)
         self.assertTrue(namespace.lower)
         result = echo.main(args)
-        self.assertEquals(result, "hello!")
+        self.assertEqual(result, "hello!")
 
 
     def test_no_args(self):
         """Testing NO args"""
         args = ["Hello!"]
         result = echo.main(args)
-        self.assertEquals(result, 'Hello!')
+        self.assertEqual(result, 'Hello!')
 
 
 if __name__ == '__main__':
